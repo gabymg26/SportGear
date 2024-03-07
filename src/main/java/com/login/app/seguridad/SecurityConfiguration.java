@@ -10,12 +10,12 @@ import org.springframework.security.config.annotation.authentication.configurers
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.web.SecurityFilterChain;
+
 
 
 @Configuration
 @EnableWebSecurity
-public class SecurityConfiguration{
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 
     @Autowired
     private UsuarioServicio usuarioServicio;
@@ -34,8 +34,14 @@ public class SecurityConfiguration{
     }
 
     //Determina si los datos son válidos o no
+    @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception{
         auth.authenticationProvider(authenticationProvider());
+    }
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception{
+        http.authorizeRequests().antMatchers("/registro**", "/js**/", "/css**/", "/img**").permitAll().anyRequest().authenticated().and().formLogin().loginPage("/login").permiteAll().and().logout().invalidateHttpSession(true).clearAuthentication;
     }
 
 }

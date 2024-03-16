@@ -1,10 +1,10 @@
 package com.login.app.servicio;
 
-import com.login.app.dto.UsuarioRegistroDTO;
-import com.login.app.modelo.Rol;
-import com.login.app.modelo.Usuario;
-import com.login.app.repositorio.UsuarioRepositorio;
-import org.hibernate.sql.ast.tree.expression.Collation;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -14,9 +14,10 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.stream.Collectors;
+import com.login.app.controlador.dto.UsuarioRegistroDTO;
+import com.login.app.modelo.Rol;
+import com.login.app.modelo.Usuario;
+import com.login.app.repositorio.UsuarioRepositorio;
 
 @Service
 public class UsuarioServicioImpl implements UsuarioServicio{
@@ -49,5 +50,10 @@ public class UsuarioServicioImpl implements UsuarioServicio{
 
     private Collection<? extends GrantedAuthority> mapearAutoridadesRoles(Collection<Rol> roles){
         return roles.stream().map(role -> new SimpleGrantedAuthority(role.getNombre())).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<Usuario> listarUsuarios() {
+        return usuarioRepositorio.findAll();
     }
 }

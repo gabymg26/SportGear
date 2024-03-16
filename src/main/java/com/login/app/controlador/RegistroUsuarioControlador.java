@@ -1,6 +1,6 @@
 package com.login.app.controlador;
 
-import com.login.app.dto.UsuarioRegistroDTO;
+import com.login.app.controlador.dto.UsuarioRegistroDTO;
 import com.login.app.servicio.UsuarioServicio;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

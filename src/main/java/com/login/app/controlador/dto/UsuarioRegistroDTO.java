@@ -1,11 +1,20 @@
 package com.login.app.controlador.dto;
 
+import com.login.app.modelo.Rol;
+
+import java.util.Collection;
+
 public class UsuarioRegistroDTO {
     private Long id;
     private String nombre;
     private String apellido;
     private String email;
     private String password;
+
+    private Collection<Rol> roles;
+    private Long codigo;
+    private Long telefono;
+    private String programa;
 
     public Long getId() {
         return id;
@@ -47,13 +56,48 @@ public class UsuarioRegistroDTO {
         this.password = password;
     }
 
+    public Collection<Rol> getRoles() {
+        return roles;
+    }
 
-    public UsuarioRegistroDTO(String nombre, String apellido, String email, String password) {
+    public void setRoles(Collection<Rol> roles) {
+        this.roles = roles;
+    }
+
+    public Long getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(Long codigo) {
+        this.codigo = codigo;
+    }
+
+    public Long getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(Long telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getPrograma() {
+        return programa;
+    }
+
+    public void setPrograma(String programa) {
+        this.programa = programa;
+    }
+
+    public UsuarioRegistroDTO(String nombre, String apellido, String email, String password, Long codigo, Long telefono, String programa, Collection<Rol> roles) {
         super();
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
         this.password = password;
+        this.codigo = codigo;
+        this.telefono = telefono;
+        this.programa = programa;
+        this.roles = roles;
     }
 
     public UsuarioRegistroDTO() {

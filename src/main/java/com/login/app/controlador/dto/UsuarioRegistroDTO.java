@@ -1,21 +1,27 @@
-package com.login.app.dto;
+package com.login.app.controlador.dto;
+
+import com.login.app.modelo.Rol;
+
+import java.util.Collection;
 
 public class UsuarioRegistroDTO {
-    private Long idUsuario;
+    private Long id;
     private String nombre;
     private String apellido;
     private String email;
     private String password;
+
+    private String roles;
     private Long codigo;
     private Long telefono;
     private String programa;
 
-    public Long getIdUsuario() {
-        return idUsuario;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdUsuario(Long idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -50,6 +56,14 @@ public class UsuarioRegistroDTO {
         this.password = password;
     }
 
+    public String getRoles() {
+        return roles;
+    }
+
+    public void setRoles(String roles) {
+        this.roles = roles;
+    }
+
     public Long getCodigo() {
         return codigo;
     }
@@ -74,8 +88,8 @@ public class UsuarioRegistroDTO {
         this.programa = programa;
     }
 
-    public UsuarioRegistroDTO(Long idUsuario, String nombre, String apellido, String email, String password, Long codigo, Long telefono, String programa) {
-        this.idUsuario = idUsuario;
+    public UsuarioRegistroDTO(String nombre, String apellido, String email, String password, Long codigo, Long telefono, String programa, String roles) {
+        super();
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
@@ -83,22 +97,10 @@ public class UsuarioRegistroDTO {
         this.codigo = codigo;
         this.telefono = telefono;
         this.programa = programa;
-    }
-
-    public UsuarioRegistroDTO(String nombre, String apellido, String email, String password, Long codigo, Long telefono, String programa) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.email = email;
-        this.password = password;
-        this.codigo = codigo;
-        this.telefono = telefono;
-        this.programa = programa;
-    }
-
-    public UsuarioRegistroDTO(String email) {
-        this.email = email;
+        this.roles = roles;
     }
 
     public UsuarioRegistroDTO() {
+
     }
 }

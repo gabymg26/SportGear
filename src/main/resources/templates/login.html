@@ -16,17 +16,22 @@
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
           crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body style="font-family: Poppins, sans-serif; font-weight: 300; font-style: normal;">
 
 <br>
 <br>
 
+<div class="container">
         <div class="row">
             <div class="col-sm-4 col-md-offset-3 p-4" style="background-color: #EDEFF0; border-radius: 3vh">
                 <h4 class="text-center"><b>UNIVERSIDAD SURCOLOMBIANA</b></h4>
                 <h4 class="text-center"><i>SportGear</i></h4>
-                <img src="./assets/logo_usco.png" alt="logoUsco">
+                <img src="../templates/assets/logo_usco.png" alt="logoUsco">
                 <h4 class="text-center"><b>Iniciar sesión</b></h4>
                 <form th:action="@{/login}" method="post">
 
@@ -42,21 +47,22 @@
                         </div>
                     </div>
 
-                    <div class="input-group mb-3">
-                        <label class="input-group-text" for="rol">Seleccione su rol</label>
-                        <select class="form-select" id="rol" name="roles" multiple="multiple">
-                            <option th:each="rol: ${roles}" th:value="${rol}" th:text="${rol}" style="background-color: #DFD4A6"></option>
+                    <div class="form-group">
+                        <label class="control-label" for="rol">Seleccione su rol:</label>
+                        <br>
+                        <select id="rol" name="roles" multiple="multiple">
+                            <option th:each="rol: ${roles}" th:value="${rol}" th:text="${rol}"></option>
                         </select>
                     </div>
 
                     <div class="form-group">
                         <label class="control-label" for="username">Usuario</label>
-                        <input id="username" name="username" type="text" class="form-control" required autofocus="autofocus" placeholder="Digite su email" style="background-color: #DFD4A6">
+                        <input id="username" name="username" type="text" class="form-control" required autofocus="autofocus" placeholder="Digite su email">
                     </div>
 
                     <div class="form-group">
                         <label class="control-label" for="password">Contraseña</label>
-                        <input id="password" name="password" type="password" class="form-control" required autofocus="autofocus" placeholder="Digite su contraseña" style="background-color: #DFD4A6">
+                        <input id="password" name="password" type="password" class="form-control" required autofocus="autofocus" placeholder="Digite su contraseña">
                     </div>
 
                     <div class="form-group" style="display: flex; justify-content: center">
@@ -67,11 +73,9 @@
                 <div class="form-group">
                     <a th:href="@{/registro}"><p class="text-center"><b><i>Registrarse</i></b></p></a>
                 </div>
-
             </div>
         </div>
-
-<!-- Latest compiled and minified JavaScript -->
+</div>
 <script
         src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"

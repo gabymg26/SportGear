@@ -48,14 +48,6 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label" for="rol">Seleccione su rol:</label>
-                        <br>
-                        <select id="rol" name="roles" multiple="multiple">
-                            <option th:each="rol: ${roles}" th:value="${rol}" th:text="${rol}"></option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
                         <label class="control-label" for="username">Usuario</label>
                         <input id="username" name="username" type="text" class="form-control" required autofocus="autofocus" placeholder="Digite su email">
                     </div>

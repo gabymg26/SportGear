@@ -52,8 +52,8 @@
                 <div class="form-group">
                     <label class="control-label" for="rol">Seleccione su rol:</label>
                     <br>
-                    <select id="rol" name="roles" multiple="multiple">
-                        <option th:each="rol: ${roles}" th:value="${rol}" th:text="${rol}"></option>
+                    <select id="rol" name="rol">
+                        <option th:each="rol : ${roles}" th:value="${rol}" th:text="${rol}"></option>
                     </select>
                 </div>
 
@@ -82,11 +82,12 @@
                         type="password" id="password" class="form-control" th:field="*{password}"
                         required autofocus="autofocus">
                 </div>
-            </form>
+
                 <div class="form-group">
-                    <button type="submit" class="btn btn-success" style="background-color: #DFD4A6; border-radius: 2vh">Registrarme</button>
+                    <button type="submit" class="btn" style="background-color: #DFD4A6; border-radius: 2vh">Registrarme</button>
                     <a th:href="@{/login}"><p class="text-center"><b><i>Iniciar sesión</i></b></p></a>
                 </div>
+            </form>
         </div>
     </div>
 </div>

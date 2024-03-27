@@ -11,7 +11,7 @@ public class UsuarioRegistroDTO {
     private String email;
     private String password;
 
-    private String roles;
+    private String rol;
     private Long codigo;
     private Long telefono;
     private String programa;
@@ -56,12 +56,12 @@ public class UsuarioRegistroDTO {
         this.password = password;
     }
 
-    public String getRoles() {
-        return roles;
+    public String getRol() {
+        return rol;
     }
 
-    public void setRoles(String roles) {
-        this.roles = roles;
+    public void setRol(String rol) {
+        this.rol = rol;
     }
 
     public Long getCodigo() {
@@ -88,7 +88,7 @@ public class UsuarioRegistroDTO {
         this.programa = programa;
     }
 
-    public UsuarioRegistroDTO(String nombre, String apellido, String email, String password, Long codigo, Long telefono, String programa, String roles) {
+    public UsuarioRegistroDTO(String nombre, String apellido, String email, String password, Long codigo, Long telefono, String programa, String rol) {
         super();
         this.nombre = nombre;
         this.apellido = apellido;
@@ -97,7 +97,7 @@ public class UsuarioRegistroDTO {
         this.codigo = codigo;
         this.telefono = telefono;
         this.programa = programa;
-        this.roles = roles;
+        this.rol = rol;
     }
 
     public UsuarioRegistroDTO() {

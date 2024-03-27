@@ -20,32 +20,34 @@ import com.login.app.modelo.Usuario;
 import com.login.app.repositorio.UsuarioRepositorio;
 
 @Service
-public class UsuarioServicioImpl implements UsuarioServicio{
+public class UsuarioServicioImpl implements UsuarioServicio {
+
+
+    private UsuarioRepositorio usuarioRepositorio;
 
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
 
-    private UsuarioRepositorio usuarioRepositorio;
-
     public UsuarioServicioImpl(UsuarioRepositorio usuarioRepositorio) {
+        super();
         this.usuarioRepositorio = usuarioRepositorio;
     }
 
     @Override
-    public Usuario guardarUsuario(UsuarioRegistroDTO registroDTO) {
+    public Usuario guardar(UsuarioRegistroDTO registroDTO, String rol) {
         Usuario usuario = new Usuario(registroDTO.getNombre(),
-                registroDTO.getApellido(), registroDTO.getEmail(), passwordEncoder.encode(registroDTO.getPassword()),
-                Arrays.asList(new Rol("ROLE_USER")));
+                registroDTO.getApellido(),registroDTO.getEmail(),
+                passwordEncoder.encode(registroDTO.getPassword()),Arrays.asList(new Rol(rol)));
         return usuarioRepositorio.save(usuario);
     }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Usuario usuario = usuarioRepositorio.findByEmail(username);
-        if (usuario == null){
-            throw new UsernameNotFoundException("Usuario o password inválido");
+        if(usuario == null) {
+            throw new UsernameNotFoundException("Usuario o password inválidos");
         }
-        return new User(usuario.getEmail(), usuario.getPassword() , mapearAutoridadesRoles(usuario.getRoles()));
+        return new User(usuario.getEmail(),usuario.getPassword(), mapearAutoridadesRoles(usuario.getRoles()));
     }
 
     private Collection<? extends GrantedAuthority> mapearAutoridadesRoles(Collection<Rol> roles){

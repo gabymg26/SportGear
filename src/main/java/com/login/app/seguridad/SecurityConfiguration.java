@@ -14,7 +14,7 @@ import com.login.app.servicio.UsuarioServicio;
 
 @Configuration
 @EnableWebSecurity
-public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private UsuarioServicio usuarioServicio;
@@ -39,16 +39,20 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers(
+        http.authorizeRequests()
+                .antMatchers(
                         "/registro**",
                         "/js/**",
                         "/css/**",
                         "/img/**").permitAll()
+                .antMatchers("/estudiante/**").hasRole("Estudiante")
+                .antMatchers("/administrativo/**").hasRole("Administrativo")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/login")
                 .permitAll()
+                .defaultSuccessUrl("/", true) // Redirige al usuario a la página principal después de iniciar sesión
                 .and()
                 .logout()
                 .invalidateHttpSession(true)

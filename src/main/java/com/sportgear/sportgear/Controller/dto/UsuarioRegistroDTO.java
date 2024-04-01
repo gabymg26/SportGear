@@ -1,8 +1,4 @@
-package com.login.app.controlador.dto;
-
-import com.login.app.modelo.Rol;
-
-import java.util.Collection;
+package com.sportgear.sportgear.Controller.dto;
 
 public class UsuarioRegistroDTO {
     private Long id;

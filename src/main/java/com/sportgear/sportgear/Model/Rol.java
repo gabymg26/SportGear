@@ -1,4 +1,4 @@
-package com.login.app.modelo;
+package com.sportgear.sportgear.Model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

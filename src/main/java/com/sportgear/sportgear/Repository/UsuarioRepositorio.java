@@ -1,5 +1,5 @@
-package com.login.app.repositorio;
-import com.login.app.modelo.Usuario;
+package com.sportgear.sportgear.Repository;
+import com.sportgear.sportgear.Model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

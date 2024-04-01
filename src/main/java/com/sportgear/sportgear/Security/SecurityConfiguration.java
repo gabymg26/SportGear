@@ -1,4 +1,4 @@
-package com.login.app.seguridad;
+package com.sportgear.sportgear.Security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -10,7 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-import com.login.app.servicio.UsuarioServicio;
+import com.sportgear.sportgear.Service.UsuarioServicio;
 
 @Configuration
 @EnableWebSecurity
@@ -52,7 +52,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .loginPage("/login")
                 .permitAll()
-                .defaultSuccessUrl("/", true) // Redirige al usuario a la página principal después de iniciar sesión
+                .defaultSuccessUrl("/administrativo/inventario", true) // Redirige al administrativo a la página listar_inventario.html después de iniciar sesión
                 .and()
                 .logout()
                 .invalidateHttpSession(true)

@@ -1,7 +1,7 @@
-package com.login.app.controlador;
+package com.sportgear.sportgear.Controller;
 
-import com.login.app.controlador.dto.UsuarioRegistroDTO;
-import com.login.app.servicio.UsuarioServicio;
+import com.sportgear.sportgear.Controller.dto.UsuarioRegistroDTO;
+import com.sportgear.sportgear.Service.UsuarioServicio;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -34,7 +34,7 @@ public class RegistroUsuarioControlador {
     }
 
     @PostMapping
-    public String registrarCuentaDeUsuario(@ModelAttribute("usuario") UsuarioRegistroDTO registroDTO, String rol) {
+    public String registrarCuentaDeUsuario(@ModelAttribute("usuario") UsuarioRegistroDTO registroDTO, @RequestParam("rol") String rol) {
         usuarioServicio.guardar(registroDTO, rol);
         return "redirect:/registro?exito";
     }

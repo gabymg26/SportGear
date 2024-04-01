@@ -1,4 +1,6 @@
-package com.login.app.modelo;
+package com.sportgear.sportgear.Model;
+
+import com.sportgear.sportgear.Model.Rol;
 
 import java.util.Collection;
 import java.util.List;
@@ -116,18 +118,6 @@ public class Usuario {
     }
 
     public void setPrograma(String programa) {
-        this.programa = programa;
-    }
-
-    public Usuario(Long idUsuario, String nombre, String apellido, String email, String password, Collection<Rol> roles, Long codigo, Long telefono, String programa) {
-        this.idUsuario = idUsuario;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.email = email;
-        this.password = password;
-        this.roles = roles;
-        this.codigo = codigo;
-        this.telefono = telefono;
         this.programa = programa;
     }
 

@@ -1,6 +1,6 @@
-package com.login.app.controlador;
+package com.sportgear.sportgear.Controller;
 
-import com.login.app.servicio.UsuarioServicio;
+import com.sportgear.sportgear.Service.UsuarioServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

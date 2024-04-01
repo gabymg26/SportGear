@@ -1,7 +1,7 @@
-package com.login.app.servicio;
+package com.sportgear.sportgear.Service;
 
-import com.login.app.controlador.dto.UsuarioRegistroDTO;
-import com.login.app.modelo.Usuario;
+import com.sportgear.sportgear.Controller.dto.UsuarioRegistroDTO;
+import com.sportgear.sportgear.Model.Usuario;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 import java.util.List;

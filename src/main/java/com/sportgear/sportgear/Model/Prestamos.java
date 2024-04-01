@@ -1,9 +1,9 @@
 package com.sportgear.sportgear.Model;
 
-import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -21,7 +21,7 @@ public class Prestamos {
 
     @OneToOne
     @JoinColumn(name = "idUsuario")
-    private Usuarios usuarios;
+    private Usuario usuario;
 
     @OneToOne
     @JoinColumn(name = "idImplemento")
@@ -32,7 +32,7 @@ public class Prestamos {
         return "Prestamos{" +
                 "id=" + id +
                 ", fechaPrestamo=" + fechaPrestamo +
-                ", usuarios=" + usuarios +
+                ", usuario=" + usuario +
                 ", implementosDeportivos=" + implementosDeportivos +
                 '}';
     }

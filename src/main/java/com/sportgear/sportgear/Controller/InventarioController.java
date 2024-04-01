@@ -24,7 +24,7 @@ public class InventarioController {
     @Autowired
     private CatImplementosService catImplementosService;
 
-    @GetMapping("/")
+    @GetMapping("/inventario")
     public String listarInventario(Model model){
         List<Inventario> listadoInventario = inventarioService.listarInventario();
         model.addAttribute("titulo","Lista de Inventario");

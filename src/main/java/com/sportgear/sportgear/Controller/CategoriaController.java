@@ -40,7 +40,7 @@ public class CategoriaController {
                          RedirectAttributes redirectAttributes){
         catImplementosService.guadar_categoria(catImplementos);
         redirectAttributes.addFlashAttribute("success","Categoria creada con Éxito");
-        return "redirect:/";
+        return "redirect:/inventario";
     }
 
     @GetMapping("/eliminarCategoria/{id}")

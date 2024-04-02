@@ -14,12 +14,12 @@ public class RegistroControlador {
 
     @GetMapping("/login")
     public String iniciarSesion(){
-        return "login";
+        return "/login";
     }
 
     @GetMapping("/")
     public String verPaginaDeInicio(Model modelo){
         modelo.addAttribute("usuarios",servicio.listarUsuarios());
-        return "index";
+        return "/login";
     }
 }

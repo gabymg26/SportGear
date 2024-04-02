@@ -47,7 +47,7 @@ public class InventarioController {
                           RedirectAttributes redirectAttributes){
         inventarioService.guardar(inventario);
         redirectAttributes.addFlashAttribute("success","Implemento guardado con Exito");
-        return "redirect:/";
+        return "redirect:/inventario";
     }
 
     @GetMapping("/editar/{id}")
@@ -60,11 +60,11 @@ public class InventarioController {
 
             if(inventario == null){
                 redirectAttributes.addFlashAttribute("error", "Atención: El Id del Implemento no Existe!");
-                return "redirect:/";
+                return "redirect:/inventario";
             }
         }else {
             redirectAttributes.addFlashAttribute("error", "Atención: Error con el Id del Implemento");
-            return "redirect:/";
+            return "redirect:/inventario";
         }
 
         List<CatImplementos> listCategorias = catImplementosService.listarCategorias();
@@ -84,15 +84,15 @@ public class InventarioController {
 
             if(inventario == null){
                 redirectAttributes.addFlashAttribute("error", "Atención: El Id del Implemento no Existe!");
-                return "redirect:/";
+                return "redirect:/inventario";
             }
         }else {
             redirectAttributes.addFlashAttribute("error", "Atención: El Id del Implemento no Existe!");
-            return "redirect:/";
+            return "redirect:/inventario";
         }
 
         inventarioService.eliminar(idInventario);
         redirectAttributes.addFlashAttribute("warning", "Implemento Eliminado Con Éxito");
-        return "redirect:/";
+        return "redirect:/inventario";
     }
 }

@@ -9,18 +9,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
-<body style="font-family: Poppins, sans-serif; font-weight: 300; font-style: normal;">
+<body style="font-family: Poppins, sans-serif; font-weight: 300; font-style: normal">
 
-<br>
-<br>
-
-<div class="container-fluid h-100 d-flex justify-content-center align-items-center">
+<div class="container-fluid h-100 d-flex justify-content-center align-items-center mt-5">
         <div>
             <div class="col-sm-8 col-md-offset-3 p-4" style="background-color: #EDEFF0; border-radius: 3vh">
                 <h4 class="text-center"><b>UNIVERSIDAD SURCOLOMBIANA</b></h4>
                 <h4 class="text-center"><i>SportGear</i></h4>
                 <div class="text-center">
-                    <img src="/Images/Usco.png" alt="Imagen de la Usco" style="width: 100px; height: 100px">
+                    <img src="/Images/Usco.png" alt="Usco Imagen" style="width: 100px; height: 100px">
                 </div>
                 <h4 class="text-center"><b>Iniciar sesión</b></h4>
                 <form th:action="@{/login}" method="post">
@@ -47,13 +44,13 @@
                         <input id="password" name="password" type="password" class="form-control" required autofocus="autofocus" placeholder="Digite su contraseña">
                     </div>
 
-                    <div class="form-group" style="display: flex; justify-content: center">
+                    <div class="form-group text-center">
                         <input type="submit" class="btn" id="login-submit" value="Entrar" style="background-color: #DFD4A6; border-radius: 2vh">
                     </div>
 
                 </form>
-                <div class="form-group">
-                    <a th:href="@{/registro}"><p class="text-center"><b><i>Registrarse</i></b></p></a>
+                <div class="form-group text-center">
+                    <a th:href="@{/registro}"><p><b><i>Registrarse</i></b></p></a>
                 </div>
             </div>
         </div>
